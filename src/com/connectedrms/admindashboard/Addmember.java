@@ -72,28 +72,28 @@ public class Addmember {
 	       
 	       //positive testing
 	       driver.findElement(By.id("first_name")).clear();
-	       driver.findElement(By.id("first_name")).sendKeys("learner");
+	       driver.findElement(By.id("first_name")).sendKeys("Anima");
 	       
 	       driver.findElement(By.id("last_name")).clear();
-	       driver.findElement(By.id("last_name")).sendKeys("Learner");
+	       driver.findElement(By.id("last_name")).sendKeys("Jha2");
 	       
 	       driver.findElement(By.id("user_name")).clear();
-	       driver.findElement(By.id("user_name")).sendKeys("learnerleaner1");
+	       driver.findElement(By.id("user_name")).sendKeys("AnimaJha2");
 	       
 	       driver.findElement(By.id("password")).sendKeys("Hiup@123");
 	       driver.findElement(By.id("confirm_password")).sendKeys("Hiup@123");
 	       
 	       driver.findElement(By.id("confirm_email")).clear();
-	       driver.findElement(By.id("confirm_email")).sendKeys("learnerlearner1@yopmail.com");
+	       driver.findElement(By.id("confirm_email")).sendKeys("animajha2@yopmail.com");
 			
 	       Select drprole = new Select(driver.findElement(By.id("role")));
 	       drprole.selectByVisibleText("Learner");
 	       
 	       driver.findElement(By.cssSelector("input.btn")).click();
-	       Thread.sleep(2000);
-	       driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/button/span")).click();
 	       Thread.sleep(5000);
-	       driver.findElement(By.cssSelector("#message_alert > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1) > span:nth-child(1)")).click();
+	       
+	       //close tab
+	       driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/button/span")).click();
 	       driver.quit();
 	}
 	       

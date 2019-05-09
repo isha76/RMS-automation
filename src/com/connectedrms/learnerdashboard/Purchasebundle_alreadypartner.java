@@ -73,7 +73,8 @@ public class Purchasebundle_alreadypartner {
 	       
 	       //purchase button
 	       driver.findElement(By.xpath("/html/body/main/div[2]/div/div/div[2]/div/div/form/div[8]/input")).click();
-	   
+	       Thread.sleep(10000);
+	       driver.quit();
 	
 	}
 	

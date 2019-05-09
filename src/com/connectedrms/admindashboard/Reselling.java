@@ -54,9 +54,9 @@ public class Reselling {
 
 
 	       driver.findElement(By.id("EUR")).click();
-	       //driver.findElement(By.id("EUR-price")).clear();
+	       driver.findElement(By.id("EUR-price")).clear();
 	       driver.findElement(By.id("EUR-price")).sendKeys("100");
-	       //driver.findElement(By.id("EUR-vat")).clear();
+	       driver.findElement(By.id("EUR-vat")).clear();
 	       driver.findElement(By.id("EUR-vat")).sendKeys("10");
 	       driver.findElement(By.cssSelector(".btn-primary")).click();
 	       
@@ -66,7 +66,7 @@ public class Reselling {
 	       driver.findElement(By.cssSelector(".white-text")).click();
 	       
 	     
-	       
+	       /*
 	      
 	       //edit pricing
 	       Thread.sleep(3000);
@@ -87,7 +87,7 @@ public class Reselling {
 	       driver.findElement(By.cssSelector(".white-text")).click();
 	       
 	       //edit price2
-	       /*
+	       
 	       //edit pricing
 	       Thread.sleep(3000);
 	       driver.findElement(By.xpath("/html/body/main/div[2]/div/div/div[2]/div/div/div[3]/div[1]/div[3]/button")).click();
