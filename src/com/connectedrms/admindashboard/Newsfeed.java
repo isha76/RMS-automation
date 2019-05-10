@@ -57,6 +57,13 @@ public class Newsfeed {
 	       body.sendKeys("some text");
 	       
 	       driver.switchTo().defaultContent();
+	       
+	       //upload image
+	       WebElement uploadElement = driver.findElement(By.name("image"));
+
+	        // enter the file path onto the file-selection input field
+	        uploadElement.sendKeys("/home/isha/Pictures/book_images/coffee_cup.jpeg");
+	       
 	       //publish
 	       driver.findElement(By.xpath("/html/body/main/div/div[1]/div[2]/div/section[1]/div[1]/div/div/div/form/div[2]/div[2]/input")).click();
 	       //close 
