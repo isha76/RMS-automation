@@ -1,52 +1,20 @@
 package com.connectedrms.admindashboard;
 
-
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Member {
-
-	WebDriver driver;
-	JavascriptExecutor jse;
 	
-	public void invokeBrowser() throws InterruptedException {
-		
-		System.getProperty("webdriver.gecko.driver","//usr/bin//geckodriver");
-	       WebDriver driver=new FirefoxDriver();
-	       WebDriverWait wait=new WebDriverWait(driver, 20);
-	     
-	       
-	       //implicit wait
-	       driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-	       
-	       
-	       //site open
-	       driver.get("https://www.sandbox.connectedrms.com/login");
-	          
-	       driver.manage().window().maximize();
-	       
-	       //login
-	       driver.findElement(By.id("email")).sendKeys("ishakhanal@hiupapp.com");
-	       driver.findElement(By.id("password")).sendKeys("secret");
-	       
-	       //scroll down
-	       jse = (JavascriptExecutor)driver;
-	       jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-	       
-	       driver.findElement(By.xpath("/html/body/div[2]/form/div[3]/input")).click();
-	       Thread.sleep(5000);
+	public void browsemember(WebDriver driver,WebDriverWait wait,JavascriptExecutor jse) throws InterruptedException {
 	      
 	       
 	       //see more members
-	       driver.findElement(By.cssSelector("div.licensed-block-heading-last:nth-child(7)")).click();
+	       driver.findElement(By.cssSelector(".navigation > li:nth-child(4) > a:nth-child(1)")).click();
 	       
 	       //scroll down
 	       jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
@@ -111,17 +79,7 @@ public class Member {
 	       
 	
 	}
-	       
-	       public static void main(String[] args) throws InterruptedException {
-	   		Member myObj = new Member();
-	   		myObj.invokeBrowser();
-	   		
-	       }
-	   		
-
-	   	
-	       
-	       
+	           
 	       
 	}
 	

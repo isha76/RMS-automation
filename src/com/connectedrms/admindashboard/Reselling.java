@@ -1,44 +1,16 @@
 package com.connectedrms.admindashboard;
 
-import java.util.Iterator;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class Reselling {
-
-	WebDriver driver;
-	JavascriptExecutor jse;
 	
-	public void invokeBrowser() throws InterruptedException {
-		
-		System.getProperty("webdriver.gecko.driver","//usr/bin//geckodriver");
-	       WebDriver driver=new FirefoxDriver();
-	     
-	       
-	       //implicit wait
-	       driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-	       
-	       
-	       //site open
-	       driver.get("https://www.sandbox.connectedrms.com/login");
-	          
-	       driver.manage().window().maximize();
-	       
-	       //login
-	       driver.findElement(By.id("email")).sendKeys("ishakhanal@hiupapp.com");
-	       driver.findElement(By.id("password")).sendKeys("secret");
-	       
-	       //scroll down
-	       jse = (JavascriptExecutor)driver;
-	       jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-	       
-	       driver.findElement(By.xpath("/html/body/div[2]/form/div[3]/input")).click();
-	       Thread.sleep(5000);
+	public void resell(WebDriver driver,WebDriverWait wait,JavascriptExecutor jse) throws InterruptedException {
 	       
 	       //course menu to reselling course
 	       driver.findElement(By.cssSelector(".dropdown > a:nth-child(1)")).click();
@@ -60,9 +32,7 @@ public class Reselling {
 	       driver.findElement(By.id("EUR-vat")).sendKeys("10");
 	       driver.findElement(By.cssSelector(".btn-primary")).click();
 	       
-	       
-	       
-	     
+	       //close tab
 	       driver.findElement(By.cssSelector(".white-text")).click();
 	       
 	     
@@ -116,30 +86,21 @@ public class Reselling {
 	       
 	       //set to reselling bundle
 	       driver.findElement(By.cssSelector("#licensed-block-list > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-	       String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
-	       String subWindowHandler = null;
-	       
-	       Set<String> handles = driver.getWindowHandles(); // get all window handles
-	       Iterator<String> iterator = handles.iterator();
-	       while (iterator.hasNext()){
-	           subWindowHandler = iterator.next();
-	       }
-	       driver.switchTo().window(subWindowHandler); // switch to popup window
-	       driver.findElement(By.cssSelector("a.btn:nth-child(2)")).click();
+	      
+	       //pop up 
+	       WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.btn:nth-child(2)")));
+	       element.click();
 	       Thread.sleep(3000);
 	       
+	       //close tab
 	       driver.findElement(By.cssSelector(".white-text")).click();
 	       
-	       driver.switchTo().window(parentWindowHandler);
+	       //back to feed
+	       driver.findElement(By.cssSelector(".navigation > li:nth-child(1) > a:nth-child(1)")).click();
+	       Thread.sleep(5000);
 	       
 	       
 	}
 	         
-
-	public static void main(String[] args) throws InterruptedException {
-		Reselling myObj = new Reselling();
-		myObj.invokeBrowser();
-		
-   }
 	
 }
