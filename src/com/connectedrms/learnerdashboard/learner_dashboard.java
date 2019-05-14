@@ -1,52 +1,23 @@
 package com.connectedrms.learnerdashboard;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class learner_dashboard {
 	
-	WebDriver driver;
-	JavascriptExecutor jse;
 	
-	
-public void invokeBrowser() throws InterruptedException {
+	public void invokeBrowser(WebDriver driver,WebDriverWait wait,JavascriptExecutor jse) throws InterruptedException {
 		
-		System.getProperty("webdriver.gecko.driver","//usr/bin//geckodriver");
-	       WebDriver driver=new FirefoxDriver();
-	       WebDriverWait wait=new WebDriverWait(driver, 20);
-	       
-	       //implicit wait
-	       driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-	       
-	       //site open
-	       driver.get("https://www.sandbox.connectedrms.com/login");
-	       
+
 	       //stores url
 	       ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-	       
-	      
-	       driver.manage().window().maximize();
-	       
-	       //login
-	       driver.findElement(By.id("email")).sendKeys("hiuprmslearner1@yopmail.com");
-	       driver.findElement(By.id("password")).sendKeys("Hiup@123");
-	       
-	       //scroll down
-	       jse = (JavascriptExecutor)driver;
-	       jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-	       
-	       driver.findElement(By.xpath("/html/body/div[2]/form/div[3]/input")).click();
-	       Thread.sleep(5000);
 	       
 	       
 	       // browse course
@@ -122,9 +93,14 @@ public void invokeBrowser() throws InterruptedException {
 	       //readmore
 	       WebElement input= driver.findElement(By.xpath("/html/body/div[1]/div/main/div[2]/div/div/div[2]/div/div[2]/div[2]/div[3]/a"));
 	       input.sendKeys(Keys.ENTER);		
-	       input.click();
+	       //input.click();
 	       Thread.sleep(3000);
-	       driver.findElement(By.xpath("/html/body/div[1]/div/main/div[2]/div/div/div[2]/div/div[5]/div/div/div[2]/button")).click();
+	       
+	       //model pop up
+	       WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div/main/div[2]/div/div/div[2]/div/div[5]/div/div/div[2]/button")));
+	       element.click();
+	      
+	       //driver.findElement(By.xpath("/html/body/div[1]/div/main/div[2]/div/div/div[2]/div/div[5]/div/div/div[2]/button")).click();
 		   Thread.sleep(3000);
 		   
 		   //playvideo
@@ -180,12 +156,24 @@ public void invokeBrowser() throws InterruptedException {
 		   driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div[1]/div[1]/div[2]/div/div[2]/a")).click();
 		   Thread.sleep(3000);
 		   
+		   //goesback to feed
+		   driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[1]/a")).click();
+		   Thread.sleep(3000);
+		   
 		   //certificate expand
 		   driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div[1]/div[2]/div[2]/div[2]/a")).click();
 		   Thread.sleep(3000);
 		   
+		   //goesback to feed
+		   driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[1]/a")).click();
+		   Thread.sleep(3000);
+		   
 		   //bsa expand
 		   driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div[3]/div[1]/div[2]/div[2]/a")).click();
+		   Thread.sleep(3000);
+		   
+		   //goesback to feed
+		   driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[1]/a")).click();
 		   Thread.sleep(3000);
 		   
 	       //logout
@@ -195,12 +183,6 @@ public void invokeBrowser() throws InterruptedException {
 		   Thread.sleep(3000);
 		   
 		   
-	}
-
-	public static void main(String[] args) throws InterruptedException {
-		learner_dashboard myObj = new learner_dashboard();
-		myObj.invokeBrowser();
-
 	}
 
 }

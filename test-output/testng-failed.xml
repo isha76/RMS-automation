@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="com.connectedrms.admindashboard.Login">
+      <class name="com.connectedrms.learnerdashboard.Login_learner">
         <methods>
-          <include name="login"/>
-          <include name="close"/>
           <include name="setup"/>
+          <include name="close"/>
+          <include name="login"/>
         </methods>
-      </class> <!-- com.connectedrms.admindashboard.Login -->
+      </class> <!-- com.connectedrms.learnerdashboard.Login_learner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

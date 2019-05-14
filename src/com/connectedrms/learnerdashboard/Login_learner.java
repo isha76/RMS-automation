@@ -1,4 +1,4 @@
-package com.connectedrms.admindashboard;
+package com.connectedrms.learnerdashboard;
 
 import java.net.MalformedURLException;
 
@@ -12,21 +12,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-
-public class Login {
+public class Login_learner {
 	
 	WebDriver driver;
 	JavascriptExecutor jse;
 	public static final String USERNAME = "qaengineer12";
 	public static final String AUTOMATE_KEY = "sUVx3VyvKsqTPsNqzzgn";
 	public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-	Admindashboard admin_dash1 = new Admindashboard();
-	Newsfeed admin_dash2 = new Newsfeed();
-	Bsa admin_dash3 = new Bsa();
-	Courses admin_dash4 = new Courses();
-	Member admin_dash5 = new Member();
-	Reselling admin_dash6 = new Reselling();
-	Addmember admin_dash7 = new Addmember();
+	learner_dashboard learner_dash1 = new learner_dashboard();
 	
 	@BeforeTest
 	public void setup() throws MalformedURLException {
@@ -39,7 +32,8 @@ public class Login {
 	    caps.setCapability("resolution", "1280x800");
 
 	    driver = new RemoteWebDriver(new java.net.URL(URL), caps);
-	
+	    
+	   
 	}
 	
 	@Test
@@ -60,14 +54,9 @@ public class Login {
 	       
 	       driver.findElement(By.xpath("/html/body/div[2]/form/div[3]/input")).click();
 	       Thread.sleep(5000);
-
-	       admin_dash1.feed1(driver,wait);
-	       admin_dash2.feed2(driver,wait,jse);
-	       admin_dash3.browsebsa(driver, wait);
-	       admin_dash4.browsecourse(driver, wait, jse);
-	       admin_dash5.browsemember(driver, wait, jse);
-	       //admin_dash7.memberadd(driver, jse);
-	       //admin_dash6.resell(driver, wait, jse);
+	       
+	       learner_dash1.invokeBrowser(driver, wait, jse);
+	       
 	}
 	
 	@AfterTest
@@ -75,5 +64,6 @@ public class Login {
 		
 		driver.quit();
 	}
-
+	
+	
 }
