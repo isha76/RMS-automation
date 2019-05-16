@@ -28,6 +28,8 @@ public class Purchasecourse_createpartner {
 	    caps.setCapability("os", "Windows");
 	    caps.setCapability("os_version", "10");
 	    caps.setCapability("resolution", "1280x800");
+	    caps.setCapability("build", "ConnectedRMS1");
+	    caps.setCapability("project", "RMSpurchase");
 
 	    driver = new RemoteWebDriver(new java.net.URL(URL), caps);
 	
@@ -40,16 +42,16 @@ public class Purchasecourse_createpartner {
 	       driver.get("https://hiuprms.sandbox.connectedrms.com/purchase/course");
 	      
 	       //company name
-	       driver.findElement(By.name("companyName")).sendKeys("Hiupaut Par2");
+	       driver.findElement(By.name("companyName")).sendKeys("Hiupautomation Part02");
 	       
 	       //email
-	       driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).sendKeys("hiupaut2@yopmail.com");
+	       driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).sendKeys("hiupautomation02@yopmail.com");
 	       
 	       //first name
 	       driver.findElement(By.name("first_name")).sendKeys("Hiup");
 	       
 	       //last name
-	       driver.findElement(By.name("last_name")).sendKeys("Aut2");
+	       driver.findElement(By.name("last_name")).sendKeys("Automation02");
 	       
 	       //choose course
 	       driver.findElement(By.name("organisationcourse_id")).click();
@@ -85,7 +87,7 @@ public class Purchasecourse_createpartner {
 	       
 	       //purchase
 	       driver.findElement(By.xpath("//*[@id=\"payment-form\"]/div[11]/input")).click();
-	       Thread.sleep(20000);
+	       Thread.sleep(30000);
 }
 
 	@AfterTest

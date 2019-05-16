@@ -30,6 +30,8 @@ public class Purchasebundle_alreadypartner {
 	    caps.setCapability("os", "Windows");
 	    caps.setCapability("os_version", "10");
 	    caps.setCapability("resolution", "1280x800");
+	    caps.setCapability("build", "ConnectedRMS1");
+	    caps.setCapability("project", "RMSpurchase");
 
 	    driver = new RemoteWebDriver(new java.net.URL(URL), caps);
 	
@@ -81,8 +83,11 @@ public class Purchasebundle_alreadypartner {
 	       
 	       //purchase button
 	       driver.findElement(By.xpath("/html/body/main/div[2]/div/div/div[2]/div/div/form/div[8]/input")).click();
-	       Thread.sleep(20000);
+	       Thread.sleep(15000);
 	       
+	       //close tab
+	       driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/button/span")).click();
+	       Thread.sleep(3000);
 	       
 	
 	}

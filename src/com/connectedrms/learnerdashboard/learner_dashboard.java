@@ -80,41 +80,6 @@ public class learner_dashboard {
 	       jse.executeScript("scroll(0, -500);");
 	       Thread.sleep(3000);
 	       
-	      
-	       //video
-	       driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[4]/a")).click();
-	       Thread.sleep(5000);
-		
-	       jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-	       Thread.sleep(3000);
-	       jse.executeScript("scroll(0, -500);");
-	       Thread.sleep(3000);
-	       
-	       //readmore
-	       WebElement input= driver.findElement(By.xpath("/html/body/div[1]/div/main/div[2]/div/div/div[2]/div/div[2]/div[2]/div[3]/a"));
-	       input.sendKeys(Keys.ENTER);		
-	       //input.click();
-	       Thread.sleep(5000);
-	       
-	       //model pop up
-	       WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div/main/div[2]/div/div/div[2]/div/div[5]/div/div/div[2]/button")));
-	       element.click();
-	      
-	       //driver.findElement(By.xpath("/html/body/div[1]/div/main/div[2]/div/div/div[2]/div/div[5]/div/div/div[2]/button")).click();
-		   Thread.sleep(3000);
-		   
-		   //playvideo
-		   //Actions act = Actions(driver);
-		   //act.moveToElement("div.inner_block:nth-child(2) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1) > img:nth-child(1)").click().build().perform();
-
-
-		   //WebElement input2= driver.findElement(By.cssSelector("div.inner_block:nth-child(2) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1) > img:nth-child(1)"));
-		   //input2.sendKeys(Keys.ENTER);
-	       //input2.click();
-	       //Thread.sleep(3000);
-		   
-	       
-	       
 	       //feed
 	       driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[1]/a")).click();
 	       Thread.sleep(6000);
@@ -154,7 +119,7 @@ public class learner_dashboard {
 		   driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div[1]/div[1]/div[2]/div/div[2]/a")).click();
 		   Thread.sleep(5000);
 		   
-		   //goesback to feed
+		   //goes back to feed
 		   driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[1]/a")).click();
 		   Thread.sleep(5000);
 		   
@@ -162,17 +127,62 @@ public class learner_dashboard {
 		   driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div[1]/div[2]/div[2]/div[2]/a")).click();
 		   Thread.sleep(5000);
 		   
-		   //goesback to feed
+		   //goes back to feed
 		   driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[1]/a")).click();
 		   Thread.sleep(5000);
 		   
+		   //video
+	       driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[4]/a")).click();
+	       Thread.sleep(5000);
+		
+	       jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+	       Thread.sleep(3000);
+	       jse.executeScript("scroll(0, -500);");
+	       Thread.sleep(3000);
+	       
+	       //readmore
+	       WebElement input= driver.findElement(By.xpath("/html/body/div[1]/div/main/div[2]/div/div/div[2]/div/div[2]/div[2]/div[3]/a"));
+	       input.sendKeys(Keys.ENTER);		
+	       //input.click();
+	       Thread.sleep(5000);
+	       
+	       //close freshdesk
+	       WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div[1]/span[3]/i")));
+	       element1.click();
+	       
+	       //model pop up
+	       WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/main/div[2]/div/div/div[2]/div/div[5]/div/div/div[2]/button")));
+	       element.click();
+	       
+	       
+	       /*
+	       //click video
+		   Thread.sleep(5000);
+		   wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/div[2]/div/div[2]/div[1]/img")));
+           WebElement clickvideo = driver.findElement(By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/div[2]/div/div[2]/div[1]/div/a/img"));
+          
+           clickvideo.click();
+           Thread.sleep(5000);
+           
+           //model pop up
+	       WebElement element2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/main/div[2]/div/div/div[2]/div/div[5]/div/div/div[3]/button")));
+	       element2.click();
+	       Thread.sleep(5000);
+	       
+	       */
+           
+	       
+	       //goes back to feed
+		   driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[1]/a")).click();
+		   Thread.sleep(5000);
+	       
 		   //bsa expand
-		   //driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div[3]/div[1]/div[2]/div[2]/a")).click();
-		   //Thread.sleep(5000);
+		   driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div[3]/div[1]/div[2]/div[2]/a")).click();
+		   Thread.sleep(5000);
 		   
-		   //goesback to feed
-		   //driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[1]/a")).click();
-		   //Thread.sleep(5000);
+		   //goes back to feed
+		   driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[1]/a")).click();
+		   Thread.sleep(5000);
 		   
 	       //logout
 		   driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[3]/ul/li/a/img")).click();

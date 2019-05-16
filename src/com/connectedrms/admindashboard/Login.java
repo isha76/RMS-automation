@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
@@ -37,8 +38,11 @@ public class Login {
 	    caps.setCapability("os", "Windows");
 	    caps.setCapability("os_version", "10");
 	    caps.setCapability("resolution", "1280x800");
+	    caps.setCapability("build", "ConnectedRMS1");
+	    caps.setCapability("project", "RMSadmin");
 
 	    driver = new RemoteWebDriver(new java.net.URL(URL), caps);
+	    ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
 	
 	}
 	
@@ -66,8 +70,8 @@ public class Login {
 	       admin_dash3.browsebsa(driver, wait);
 	       admin_dash4.browsecourse(driver, wait, jse);
 	       admin_dash5.browsemember(driver, wait, jse);
-	       //admin_dash7.memberadd(driver, jse);
-	       //admin_dash6.resell(driver, wait, jse);
+	       admin_dash6.resell(driver, wait, jse);
+	       admin_dash7.memberadd(driver, jse);
 	}
 	
 	@AfterTest

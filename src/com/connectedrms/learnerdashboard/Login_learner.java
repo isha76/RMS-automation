@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
@@ -30,9 +31,11 @@ public class Login_learner {
 	    caps.setCapability("os", "Windows");
 	    caps.setCapability("os_version", "10");
 	    caps.setCapability("resolution", "1280x800");
+	    caps.setCapability("build", "ConnectedRMS1");
+	    caps.setCapability("project", "RMSlearner");
 
 	    driver = new RemoteWebDriver(new java.net.URL(URL), caps);
-	    
+	    ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
 	   
 	}
 	
@@ -55,7 +58,7 @@ public class Login_learner {
 	       driver.findElement(By.xpath("/html/body/div[2]/form/div[3]/input")).click();
 	       Thread.sleep(5000);
 	       
-	       learner_dash1.invokeBrowser(driver, wait, jse);
+	      learner_dash1.invokeBrowser(driver, wait, jse);
 	       
 	}
 	

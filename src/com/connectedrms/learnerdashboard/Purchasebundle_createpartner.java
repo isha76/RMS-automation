@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 
 public class Purchasebundle_createpartner {
@@ -27,12 +28,14 @@ public class Purchasebundle_createpartner {
 	    caps.setCapability("os", "Windows");
 	    caps.setCapability("os_version", "10");
 	    caps.setCapability("resolution", "1280x800");
+	    caps.setCapability("build", "ConnectedRMS1");
+	    caps.setCapability("project", "RMSpurchase");
 
 	    driver = new RemoteWebDriver(new java.net.URL(URL), caps);
 	
 	}
 	
-	
+	@Test
 	public void invokeBrowser() throws InterruptedException {
 	       
 	       //site open
@@ -43,16 +46,16 @@ public class Purchasebundle_createpartner {
 	       
 	      
 	       //company name
-	       driver.findElement(By.name("companyName")).sendKeys("Hiupaut Par22");
+	       driver.findElement(By.name("companyName")).sendKeys("Hiupaut Part01");
 	       
 	       //email
-	       driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).sendKeys("hiupaut22@yopmail.com");
+	       driver.findElement(By.xpath("//*[@id=\"userEmail\"]")).sendKeys("hiupaut01@yopmail.com");
 	       
 	       //first name
 	       driver.findElement(By.name("first_name")).sendKeys("Hiup");
 	       
 	       //last name
-	       driver.findElement(By.name("last_name")).sendKeys("Aut22");
+	       driver.findElement(By.name("last_name")).sendKeys("Aut01");
 	       
 	       //choose bundle
 	       driver.findElement(By.name("bundle_id")).click();

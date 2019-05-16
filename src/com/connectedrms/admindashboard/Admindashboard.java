@@ -52,23 +52,28 @@ public class Admindashboard {
 	       
 	       //click logo
 	       driver.findElement(By.cssSelector(".login-tool > img:nth-child(1)")).click();
+	       Thread.sleep(3000);
 	       //learner dashboard
 	       driver.findElement(By.cssSelector(".user-menu > li:nth-child(3) > a:nth-child(1)")).click();
 	       //...... goes to learner dashboard
-	       Thread.sleep(5000);
+	       Thread.sleep(10000);
 	       //click logo
 	       driver.findElement(By.cssSelector(".login-tool > img:nth-child(1)")).click();
+	       Thread.sleep(3000);
 	       //admin dashboard
 	       driver.findElement(By.cssSelector(".dropdown-menu > li:nth-child(3) > a:nth-child(1)")).click();
 	       Thread.sleep(5000);
 	       
 	       //click logo
 	       driver.findElement(By.cssSelector(".login-tool > img:nth-child(1)")).click();
+	       Thread.sleep(3000);
 	       //purchase
 	       driver.findElement(By.cssSelector(".user-menu > li:nth-child(4) > a:nth-child(1)")).click();
+	       Thread.sleep(3000);
 	       
 	       //click logo
 	       driver.findElement(By.cssSelector(".login-tool > img:nth-child(1)")).click();
+	       Thread.sleep(3000);
 	       //partners
 	       driver.findElement(By.cssSelector(".user-menu > li:nth-child(5) > a:nth-child(1)")).click();
 	     

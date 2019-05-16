@@ -32,10 +32,10 @@ public class Newsfeed {
 	       
 	       //upload image(for linux)
 	       
-	       //WebElement uploadElement = driver.findElement(By.name("image"));
+	       WebElement uploadElement = driver.findElement(By.name("image"));
 
-	        // enter the file path onto the file-selection input field
-	       // uploadElement.sendKeys("/home/isha/Pictures/book_images/coffee_cup.jpeg");
+	       // enter the file path onto the file-selection input field
+	       uploadElement.sendKeys("/home/isha/Pictures/book_images/coffee_cup.jpeg");
 	       
 	       
 	       //publish

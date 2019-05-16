@@ -43,19 +43,19 @@ public class Addmember {
 	       
 	       //positive testing
 	       driver.findElement(By.id("first_name")).clear();
-	       driver.findElement(By.id("first_name")).sendKeys("Sanam");
+	       driver.findElement(By.id("first_name")).sendKeys("Ishaa");
 	       
 	       driver.findElement(By.id("last_name")).clear();
-	       driver.findElement(By.id("last_name")).sendKeys("Jha");
-	       
+	       driver.findElement(By.id("last_name")).sendKeys("Khanal");
+	     
 	       driver.findElement(By.id("user_name")).clear();
-	       driver.findElement(By.id("user_name")).sendKeys("SanamJha");
+	       driver.findElement(By.id("user_name")).sendKeys("ishaakhanal01");
 	       
 	       driver.findElement(By.id("password")).sendKeys("Hiup@123");
 	       driver.findElement(By.id("confirm_password")).sendKeys("Hiup@123");
 	       
 	       driver.findElement(By.id("confirm_email")).clear();
-	       driver.findElement(By.id("confirm_email")).sendKeys("sanamjha2@yopmail.com");
+	       driver.findElement(By.id("confirm_email")).sendKeys("ishaakhanal01@yopmail.com");
 			
 	       Select drprole = new Select(driver.findElement(By.id("role")));
 	       drprole.selectByVisibleText("Learner");
@@ -65,7 +65,7 @@ public class Addmember {
 	       
 	       //close tab
 	       driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/button/span")).click();
-	       driver.quit();
+	       
 	}
 	       
 
