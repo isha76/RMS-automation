@@ -1,37 +1,45 @@
 package com.connectedrms.learnerdashboard;
 
-import java.util.concurrent.TimeUnit;
-
+import java.net.MalformedURLException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 
 public class Purchasebundle_alreadypartner {
+	
 	WebDriver driver;
 	JavascriptExecutor jse;
+	public static final String USERNAME = "qaengineer12";
+	public static final String AUTOMATE_KEY = "sUVx3VyvKsqTPsNqzzgn";
+	public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 	
-	public void invokeBrowser() throws InterruptedException {
+	
+
+	@BeforeTest
+	public void setup() throws MalformedURLException {
 		
-		System.getProperty("webdriver.gecko.driver","//usr/bin//geckodriver");
-	       WebDriver driver=new FirefoxDriver();
+		DesiredCapabilities caps = new DesiredCapabilities();
+	    caps.setCapability("browser", "Chrome");
+	    caps.setCapability("browser_version", "62.0");
+	    caps.setCapability("os", "Windows");
+	    caps.setCapability("os_version", "10");
+	    caps.setCapability("resolution", "1280x800");
+
+	    driver = new RemoteWebDriver(new java.net.URL(URL), caps);
 	
-	       
-	       //implicit wait
-	       driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-	       
+	}
+	
+	@Test
+	public void invokeBrowser() throws InterruptedException {
+		   
 	       //site open
 	       driver.get("https://hiuprms.sandbox.connectedrms.com/purchase/bundle");
-	  
-	      
-	       driver.manage().window().maximize();
-	       
-	      
-	       
-	       //scroll down
-	       jse = (JavascriptExecutor)driver;
-	       //jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 	       
 	       //signin button
 	       driver.findElement(By.xpath("/html/body/section/div/div/div[3]/article/div/form/div[2]/div[2]/div/p/a")).click();
@@ -41,7 +49,7 @@ public class Purchasebundle_alreadypartner {
 	       driver.findElement(By.name("email")).sendKeys("hiupp01@yopmail.com");
 	       driver.findElement(By.name("password")).sendKeys("Hiup@123");
 	       driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div/form/div/div[3]/div/input")).click();
-	       Thread.sleep(3000);
+	       Thread.sleep(6000);
 	       
 	       //purchase page opens
 	       
@@ -73,16 +81,17 @@ public class Purchasebundle_alreadypartner {
 	       
 	       //purchase button
 	       driver.findElement(By.xpath("/html/body/main/div[2]/div/div/div[2]/div/div/form/div[8]/input")).click();
-	       Thread.sleep(10000);
-	       driver.quit();
+	       Thread.sleep(20000);
+	       
+	       
 	
 	}
 	
 
-	public static void main(String[] args) throws InterruptedException {
-		Purchasebundle_alreadypartner myObj = new Purchasebundle_alreadypartner();
-		myObj.invokeBrowser();
-
+	@AfterTest
+	public void close() {
+		
+		driver.quit();
 	}
 
 }

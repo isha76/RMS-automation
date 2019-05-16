@@ -59,7 +59,7 @@ public class Bsa {
 	       
 	       //back to feed
 	       driver.findElement(By.cssSelector(".navigation > li:nth-child(1) > a:nth-child(1)")).click();
-	       Thread.sleep(5000);
+	       Thread.sleep(6000);
 	       
 	       
 	}

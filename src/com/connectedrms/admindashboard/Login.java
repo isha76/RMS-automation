@@ -51,8 +51,8 @@ public class Login {
 	       driver.get("https://www.sandbox.connectedrms.com/login");
 	       
 	       //login
-	       driver.findElement(By.id("email")).sendKeys("hiuprmslearner1@yopmail.com");
-	       driver.findElement(By.id("password")).sendKeys("Hiup@123");
+	       driver.findElement(By.id("email")).sendKeys("ishakhanal@hiupapp.com");
+	       driver.findElement(By.id("password")).sendKeys("secret");
 	       
 	       //scroll down
 	       jse = (JavascriptExecutor)driver;

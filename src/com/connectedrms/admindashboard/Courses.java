@@ -17,10 +17,10 @@ public class Courses {
 	       
 	       //back to feed
 	       driver.findElement(By.cssSelector(".navigation > li:nth-child(1) > a:nth-child(1)")).click();
-	       Thread.sleep(3000);
+	       Thread.sleep(5000);
 	       
 	       //see more courses
-	       driver.findElement(By.cssSelector("div.licensed-block-heading-last:nth-child(5) > a:nth-child(1)")).click();
+	       driver.findElement(By.cssSelector("div.licensed-block-heading-last:nth-child(6) > a:nth-child(1)")).click();
 	       
 	       //view courses
 	       driver.findElement(By.cssSelector("div.bundle_courses_block_heading:nth-child(1) > div:nth-child(3) > a:nth-child(1)")).click();
