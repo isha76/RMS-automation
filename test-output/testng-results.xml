@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="248043" started-at="2019-05-16T11:34:22Z" finished-at="2019-05-16T11:38:30Z">
+  <suite name="Default suite" duration-ms="320648" started-at="2019-05-17T05:59:46Z" finished-at="2019-05-17T06:05:07Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="248043" started-at="2019-05-16T11:34:22Z" finished-at="2019-05-16T11:38:30Z">
+    <test name="Default test" duration-ms="320648" started-at="2019-05-17T05:59:46Z" finished-at="2019-05-17T06:05:07Z">
       <class name="com.connectedrms.learnerdashboard.Login_learner">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.connectedrms.learnerdashboard.Login_learner@cc285f4]" name="setup" is-config="true" duration-ms="9198" started-at="2019-05-16T17:19:22Z" finished-at="2019-05-16T17:19:31Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.connectedrms.learnerdashboard.Login_learner@cc285f4]" name="setup" is-config="true" duration-ms="8727" started-at="2019-05-17T11:44:46Z" finished-at="2019-05-17T11:44:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="login()[pri:0, instance:com.connectedrms.learnerdashboard.Login_learner@cc285f4]" name="login" duration-ms="236939" started-at="2019-05-16T17:19:31Z" finished-at="2019-05-16T17:23:28Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:com.connectedrms.learnerdashboard.Login_learner@cc285f4]" name="login" duration-ms="310515" started-at="2019-05-17T11:44:55Z" finished-at="2019-05-17T11:50:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.connectedrms.learnerdashboard.Login_learner@cc285f4]" name="close" is-config="true" duration-ms="1823" started-at="2019-05-16T17:23:28Z" finished-at="2019-05-16T17:23:30Z">
+        <test-method status="PASS" signature="close()[pri:0, instance:com.connectedrms.learnerdashboard.Login_learner@cc285f4]" name="close" is-config="true" duration-ms="1391" started-at="2019-05-17T11:50:05Z" finished-at="2019-05-17T11:50:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->

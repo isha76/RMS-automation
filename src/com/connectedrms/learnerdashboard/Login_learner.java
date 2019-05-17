@@ -58,7 +58,7 @@ public class Login_learner {
 	       driver.findElement(By.xpath("/html/body/div[2]/form/div[3]/input")).click();
 	       Thread.sleep(5000);
 	       
-	      learner_dash1.invokeBrowser(driver, wait, jse);
+	       learner_dash1.invokeBrowser(driver, wait, jse);
 	       
 	}
 	

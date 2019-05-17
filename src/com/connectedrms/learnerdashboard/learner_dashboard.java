@@ -150,31 +150,37 @@ public class learner_dashboard {
 	       WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div[1]/span[3]/i")));
 	       element1.click();
 	       
-	       //model pop up
+	       //close model pop up of readmore
 	       WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/main/div[2]/div/div/div[2]/div/div[5]/div/div/div[2]/button")));
 	       element.click();
 	       
-	       
-	       /*
-	       //click video
+	       //goes back to feed
+		   driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[1]/a")).click();
 		   Thread.sleep(5000);
+	       
+	       
+	       //video
+	       driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[4]/a")).click();
+	       Thread.sleep(5000);
+	       
+	       //click video
 		   wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/div[2]/div/div[2]/div[1]/img")));
            WebElement clickvideo = driver.findElement(By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/div[2]/div/div[2]/div[1]/div/a/img"));
           
            clickvideo.click();
            Thread.sleep(5000);
            
-           //model pop up
-	       WebElement element2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/main/div[2]/div/div/div[2]/div/div[5]/div/div/div[3]/button")));
-	       element2.click();
-	       Thread.sleep(5000);
+           //model po
 	       
-	       */
-           
+	       WebElement closevideo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/main/div[2]/div/div/div[2]/div/div[5]/div/div/div[3]/button")));
+	       closevideo.click();
+	       Thread.sleep(5000);    
 	       
 	       //goes back to feed
 		   driver.findElement(By.xpath("/html/body/div[1]/div/header/div/div/div[2]/ul/li[1]/a")).click();
 		   Thread.sleep(5000);
+	       
+           
 	       
 		   //bsa expand
 		   driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div[3]/div[1]/div[2]/div[2]/a")).click();
